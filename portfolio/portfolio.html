@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Agnihotri | Data Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #d4cfcf;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #5456a4 0%, #5f54ab 100%);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #6f6fd3 0%, #5454bb 100%);
+            color: rgb(255, 255, 255);
+            padding: 120px 2rem 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #000000;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #1f2656 0%, #0b032c 100%);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgb(169, 170, 171);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(2, 2, 2, 0.07);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #171717;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #000000;
+        }
+
+        .skill-card h4 {
+            color: #0707a6;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: #4a5568;
+        }
+
+        .skill-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .skill-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Work Section */
+        .work-card {
+            background: rgb(184, 184, 186);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            border-top: 4px solid #ffffff;
+        }
+
+        .work-card h3 {
+            color: #000000;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-card .company {
+            color: #021463;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-card .duration {
+            color: #000000;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-card ul {
+            color: #000000;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+
+        .work-card li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #7f7f9b;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+        }
+
+        .contact-item a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .about-content, .work-card, .contact-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>Tanya Agnihotri</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Tanya Agnihotri</h2>
+        <p class="subtitle">Aspiring Data Analyst</p>
+        <p>Computer Science Engineering Student passionate about transforming data into actionable insights</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I'm Tanya Agnihotri, a driven Computer Science Engineering student with a strong passion for data analytics and insights. Currently pursuing my Bachelor's degree, I am dedicated to leveraging technology and data to solve real-world problems and drive informed decision-making.
+                </p>
+                <p>
+                    With hands-on experience as a Data Analyst intern at NETPARAM Technologies, I've developed practical skills in data analysis, visualization, and interpretation. My academic background combined with industry exposure has equipped me with a comprehensive understanding of data-driven methodologies and analytical tools.
+                </p>
+                <p>
+                    I'm committed to continuous learning and staying updated with the latest trends in data science and analytics. My goal is to contribute meaningfully to organizations by transforming complex data into clear, actionable strategies.
+                </p>
+
+                <div class="skills">
+                    <div class="skill-card">
+                        <h4>Technical Skills</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>Data Visualization</li>
+                            <li>Statistical Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Tools & Platforms</h4>
+                        <ul>
+                            <li>Excel</li>
+                            <li>Tableau/Power BI</li>
+                            <li>Jupyter Notebooks</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Core Competencies</h4>
+                        <ul>
+                            <li>Data Analysis</li>
+                            <li>Problem Solving</li>
+                            <li>Critical Thinking</li>
+                            <li>Communication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="work-card">
+                <h3>Data Analyst Intern</h3>
+                <p class="company">NETPARAM Technologies</p>
+                <p class="duration">6-Month Internship | Current</p>
+                <ul>
+                    <li>Analyzing complex datasets to extract meaningful insights and patterns</li>
+                    <li>Creating interactive dashboards and visualizations to communicate findings effectively</li>
+                    <li>Collaborating with cross-functional teams to understand business requirements and deliver data-driven solutions</li>
+                    <li>Performing data cleaning, transformation, and validation to ensure data quality and accuracy</li>
+                    <li>Contributing to the development of analytical frameworks and methodologies</li>
+                    <li>Preparing comprehensive reports and presentations for stakeholders</li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <h3>Education</h3>
+                <p class="company">Bachelor of Technology in Computer Science Engineering</p>
+                <p class="duration">Pursuing</p>
+                <ul>
+                    <li>Specializing in Data Analytics and Information Systems</li>
+                    <li>Strong foundation in programming, algorithms, and data structures</li>
+                    <li>Coursework includes Database Management, Machine Learning, and Statistics</li>
+                    <li>Active participation in technical workshops and coding competitions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always open to discussing new opportunities, collaborations, or just connecting with fellow data enthusiasts. Feel free to reach out!</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <a href="mailto:tanyaagnihotri206@gmail.com">tanyaagnihotri206@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <a href="tel:+918077302125">+91 8077302125</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tanya Agnihotri. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
